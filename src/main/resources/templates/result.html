@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio di Tirocinio</title>
+</head>
+<body>
+
+<!--Classe Valore + Controller-->
+<!--ArrayList<Valore> listaValori = new ArrayList<>();-->
+<!--listaValori.add(v);-->
+<!--mav.addObject("lista", listaValori);-->
+<block th:each="valore : ${lista}">
+    <h3> <span th:text="${valore.nome}"></span>: <span th:text="${valore.valore}"></span></h3>
+</block>
+
+<!--Applicazione ExpressionBuilder-->
+<h2>Valore totale = <span th:text="${valoretotale}"></span></h2>
+
+<a th:href="@{/value}">Risultato.</a>
+
+</body>
+</html>

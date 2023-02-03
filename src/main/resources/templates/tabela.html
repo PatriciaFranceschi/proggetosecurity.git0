@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link href="/css/style.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio di Tirocinio</title>
+</head>
+<body>
+<form action="#" th:action="@{/value}" th:object="${tabelaLista}"
+      method="get">
+    <fieldset>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">P1</th>
+                <th scope="col">P2</th>
+                <th scope="col">P3</th>
+                <th scope="col">Risultato</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="parametriTabela: ${repositorio}">
+                <td><span th:text="${parametriTabela.id}"></span></td>
+                <td><span scope="row" th:text="${parametriTabela.parametro_uno}"></span></td>
+                <td><span scope="row" th:text="${parametriTabela.parametro_due}"></span></td>
+                <td><span scope="row" th:text="${parametriTabela.parametro_tre}"></span></td>
+                <td><span scope="row" th:text="${parametriTabela.getRisultatoData(valoretotale)}"></span></td>
+                <td>
+            </tr>
+
+            </tbody>
+        </table>
+    </fieldset>
+</form>
+</block>
+
+</body>
+</html>

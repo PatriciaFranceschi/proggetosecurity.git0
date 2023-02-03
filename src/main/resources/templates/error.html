@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Errore</title>
+
+</head>
+
+<body>
+
+<!--<header th:insert="fragments/geral.html :: header"> </header>-->
+
+<div class="container my-2">
+    <h1 th:if="${errorMessage}" th:utext="${errorMessage}">Erro</h1>
+    <h1 th:if="!${errorMessage}">404 - Pagina non trovata.</h1>
+    <a th:href="@{/inizia}">Torna alla pagina iniziale.</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Esercizio</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+
+
+<nav class="navigation">
+    <a href="/" class="index">Inizio</a>
+
+</nav>
+<div class="page-main-title">
+    <h1 class="title">Parametri</h1>
+</div>
+
+<div class="page-main">
+
+    <form class="parametri" action="/result" method="POST">
+
+        <fieldset class="fieldset">
+            <block th:each="parametro : ${parametri.parametro}">
+                <div class="field">
+
+                    <label th:for="${parametro.getNome()}"
+                           th:text='${parametro.getNome().replace("_", " ")}'></label>
+                    <input type="number" id="parametro"
+                           th:name="${parametro.getNome}"
+                           th:min='${parametro.getMinore}'
+                           th:max='${parametro.getMaggiore}'>
+
+                </div>
+
+            </block>
+
+        </fieldset>
+        <div class="actions">
+            <input type="submit" value="Invia">
+        </div>
+
+    </form>
+</div>
+</body>
+
+</html>
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio di Tirocinio</title>
+</head>
+<body>
+<form action="#" th:action="@{/value}" th:object="${tabelaLista}"
+      method="get">
+    <fieldset>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Campos</th>
+                <th scope="col">Result</th>
+                <th scope="col">Parametros</th>
+                <th scope="col">Browser</th>
+                <th scope="col">Created At</th>
+
+            <tr>
+
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="novaTabela: ${repositorioDue}">
+                <td><span th:text="${novaTabela.id}"></span></td>
+                <td><span scope="row" th:text="${novaTabela.getCampos()}"></span></td>
+                <td><span scope="row" th:text="${novaTabela.getResult(valoretotal)}"></span></td>
+                <td><span scope="row" th:text="${novaTabela.getParametros(toCalc)}"></span></td>
+                <td><span scope="row" th:text="${novaTabela.getBrowser()}"></span></td>
+                <td><span scope="row" th:text="${novaTabela.getCreatedAt()}"></span></td>
+                <td>
+            </tr>
+
+            </tbody>
+        </table>
+    </fieldset>
+</form>
+</block>
+
+</body>
+</html>
